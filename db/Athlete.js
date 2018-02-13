@@ -18,4 +18,6 @@ const Athlete = conn.define('athletes', {
   }
 })
 
-module.exports = Athlete
+module.exports = {
+  Athlete
+}
