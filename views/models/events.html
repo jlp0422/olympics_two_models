@@ -1,8 +1,10 @@
 {% extends '../layout.html' %}
 {% block content %}
-<ul>
+<h2>List of all events: Click on an event for more info</h2>
+<br>
+<ul class="list-group">
   {% for event in events %}
-    <li><a href='/events/{{event.id}}'>{{event.name}}</a></li>
+    <li class="list-group-item"><a href='/events/{{event.id}}'><h5>{{event.name}}</h5></a></li>
   {% endfor %}
 </ul>
 {% endblock %}

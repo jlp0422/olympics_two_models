@@ -3,7 +3,8 @@
 const conn = require('./conn');
 const Athlete  = require('./Athlete')
 const Country  = require('./Country')
-const OlympEvent = require('./Event')
+const { OlympEvent, Medalist } = require('./Event')
+
 
 const sync = () => {
   return conn.sync({ force: true })
@@ -24,12 +25,15 @@ const seed = () => {
 Athlete.belongsTo(Country);
 Country.hasMany(Athlete);
 
-
-Athlete.belongsToMany(OlympEvent, {through: "medalists"});
 /* 
-  this will create a middle point model called medalists that will link athletes to events 
-  on athleteId and eventId. This will give us access to our top athletes for each event
+  this will create a middle point model called medalists that will inherit from Medalist
+  and that will link athletes to events on athleteId and eventId. This will give us access
+   to our top athletes for each event
 */
+Athlete.belongsToMany(OlympEvent, {
+  through: Medalist
+});
+
 
 module.exports = {
   sync,
@@ -40,3 +44,4 @@ module.exports = {
     OlympEvent
   }
 }
+ 

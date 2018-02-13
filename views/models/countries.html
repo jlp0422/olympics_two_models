@@ -1,8 +1,10 @@
 {% extends '../layout.html' %}
 {% block content %}
-<ul>
+<h2>List of all countries: click for their athletes!</h2>
+<br>
+<ul class='list-group'>
   {% for country in countries %}
-    <li><a href='/countries/{{country.id}}'>{{country.name}}</a></li>
+  <li class="list-group-item"><a href='/events/{{country.id}}'><h5>{{country.name}}</h5></a></li>
   {% endfor %}
 </ul>
 {% endblock %}
