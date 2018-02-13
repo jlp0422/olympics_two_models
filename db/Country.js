@@ -9,6 +9,5 @@ const Country = conn.define('countries', {
   }
 })
 
-module.exports = {
-  Country
-}
+// we don't need fancy exporting here since it is only one model
+module.exports = Country

@@ -13,11 +13,11 @@ const Athlete = conn.define('athletes', {
 }, {
   getterMethods: {
     fullName: function() {
-      return `this.getDataValue('firstName') this.getDataValue('lastName')`
+      //the way this was formatted before was overkill, this should be available as .this
+      return `${this.firstName} ${this.lastName}`
     }
   }
 })
 
-module.exports = {
-  Athlete
-}
+// we don't need fancy exporting here since it is only one model
+module.exports = Athlete
