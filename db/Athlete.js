@@ -2,6 +2,7 @@
 
 const conn = require('./conn');
 const Sequelize = require('sequelize');
+const Country = require('./country')
 
 const Athlete = conn.define('athletes', {
   firstName: {
@@ -10,6 +11,9 @@ const Athlete = conn.define('athletes', {
   lastName: {
     type: Sequelize.STRING,
   },
+  // country: {
+  //   type: Sequelize.INTEGER
+  // }
 }, {
   getterMethods: {
     fullName: function() {

@@ -1,11 +1,11 @@
 const router = require('express').Router();
 
-router.use((req,res,next)=>{
+router.use((req, res, next) => {
   res.locals.path = req.url
   next();
 });
 
-router.get('/', (req,res,next)=>{
+router.get('/', (req, res, next) => {
   res.render('index', {title: 'Olympic Medal Tracker'})
 })
 

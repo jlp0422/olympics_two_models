@@ -22,17 +22,21 @@ const seed = () => {
   ])
 };
 
-Athlete.belongsTo(Country);
-Country.hasMany(Athlete);
 
-/* 
+// Athlete.belongsTo(Country);
+// Country.hasMany(Athlete);
+
+// Athlete.setCountry(Country.name)
+
+
+/*
   this will create a middle point model called medalists that will inherit from Medalist
   and that will link athletes to events on athleteId and eventId. This will give us access
    to our top athletes for each event
 */
-Athlete.belongsToMany(OlympEvent, {
-  through: Medalist
-});
+// Athlete.belongsToMany(OlympEvent, {
+//   through: Medalist
+// });
 
 
 module.exports = {
@@ -44,4 +48,3 @@ module.exports = {
     OlympEvent
   }
 }
- 

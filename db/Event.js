@@ -13,17 +13,17 @@ const OlympEvent = conn.define('event', {
 //can use this to get medals, but I'm pretty lost on how to make that work:
 
 
-const Medalist = conn.define('medalist', {
-  goldName: {
-    type: Sequelize.INTEGER
-  },
-  silverName: {
-    type: Sequelize.INTEGER 
-  },
-  bronzeName: {
-    type: Sequelize.INTEGER
-  }
-})
+// const Medalist = conn.define('medalist', {
+//   goldName: {
+//     type: Sequelize.INTEGER
+//   },
+//   silverName: {
+//     type: Sequelize.INTEGER
+//   },
+//   bronzeName: {
+//     type: Sequelize.INTEGER
+//   }
+// })
 
 
 
@@ -35,6 +35,6 @@ const Medalist = conn.define('medalist', {
 
 module.exports = {
   OlympEvent,
-  Medalist
+  // Medalist
 }
 
