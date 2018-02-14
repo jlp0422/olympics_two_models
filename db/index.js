@@ -12,11 +12,12 @@ const sync = () => {
 
 const seed = () => {
   return Promise.all([
-    Athlete.create({ firstName: 'Red', lastName: 'Gerard'}),
-    Athlete.create({ firstName: 'Erin', lastName: 'Hamlin'}),
-    Athlete.create({ firstName: 'Mark', lastName: 'McMorris'}),
-    Country.create({ name: 'USA'}),
-    Country.create({ name: 'Canada'}),
+    Athlete.create({ firstName: 'Red', lastName: 'Gerard', country: 'USA'}),
+    Athlete.create({ firstName: 'Erin', lastName: 'Hamlin', country: 'USA'}),
+    Athlete.create({ firstName: 'Mark', lastName: 'McMorris', country: 'Canada'}),
+    Athlete.create({ firstName: 'Random', lastName: 'Person', country: 'South Korea' }),
+    // Country.create({ name: 'USA'}),
+    // Country.create({ name: 'Canada'}),
     OlympEvent.create({ name: 'Downhill Skiing'}),
     OlympEvent.create({ name: 'Ice Hockey'})
   ])

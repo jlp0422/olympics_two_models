@@ -11,14 +11,27 @@ const Athlete = conn.define('athletes', {
   lastName: {
     type: Sequelize.STRING,
   },
-  // country: {
-  //   type: Sequelize.INTEGER
-  // }
+  country: {
+    type: Sequelize.STRING,
+  }
 }, {
   getterMethods: {
     fullName: function() {
-      //the way this was formatted before was overkill, this should be available as .this
       return `${this.firstName} ${this.lastName}`
+    },
+    countryURL: function () {
+      if (this.country.indexOf(' ') > -1) {
+        return this.country.toLowerCase().split(' ').join('_')
+      }
+      return this.country.toLowerCase()
+    }
+  },
+  setterMethods: {
+    countryLink: function () {
+      if (this.country.indexOf(' ') > -1) {
+        return this.country.toLowerCase().split(' ').join('_')
+      }
+      return this.country.toLowerCase()
     }
   }
 })

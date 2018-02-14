@@ -1,14 +1,30 @@
 {% extends '../layout.html' %}
+
 {% block content %}
 <h2>List of all countries: click for their athletes!</h2>
 <br>
 <ul class="list-group">
-  {% for country in countries %}
+  {% for athlete in athletes %}
     <li class="list-group-item">
-      <a href='/events/{{country.id}}'>
-        <h5>{{country.name}}</h5>
+      <a href='/countries/{{athlete.country}}'>
+        <h5>{{athlete.country}}</h5>
       </a>
     </li>
   {% endfor %}
 </ul>
+
+
+<!-- <form action="/countries/{{athlete.country}}" method="GET">
+  <div class="form-group">
+    <label>Select a Country</label>
+    <select class="form-control" name="country">
+      <option>Select...</option>
+       {% for athlete in athletes %}
+      <option>{{athlete.country}}</option>
+       {% endfor %}
+    </select>
+  </div>
+  <button class="btn btn-primary">Go</button>
+</form> -->
+
 {% endblock %}

@@ -1,4 +1,12 @@
 {% extends '../layout.html' %}
 {% block content %}
-<h3>Placeholder for {{country.name}}'s athletes and medals</h3>
-{% endblock %}
+
+<h2>Placeholder for {{ title }}'s athletes and medals</h2>
+
+<h3>Athletes</h3>
+
+ {% for athlete in athletes %}
+
+<h6>{{athlete.fullName}}</h6>
+
+{% endfor %} {% endblock %}
